@@ -1,0 +1,61 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "Intitule": "Alerte 1",
+      "niveau_dalerte": "urgent",
+      "creer_par": "HASSMAR",
+      "destinataire": "Police Nationale",
+      "date": "2021-11-05"
+    },
+    {
+      "id": 2,
+      "Intitule": "Alerte 2",
+      "niveau_dalerte": "critique",
+      "creer_par": "HASSMAR",
+      "destinataire": "Ministère de l'intérieur",
+      "date": "2021-11-03"
+    },
+    {
+      "id": 3,
+      "Intitule": "Alerte 3",
+      "niveau_dalerte": "mineur",
+      "creer_par": "HASSMAR",
+      "destinataire": "Direction des Douanes",
+      "date": "2021-11-10"
+    },
+    {
+      "id": 4,
+      "Intitule": "Alerte 4",
+      "niveau_dalerte": "majeure",
+      "creer_par": "HASSMAR",
+      "destinataire": "Marine Natonal",
+      "date": "2021-11-06"
+    },
+    {
+      "id": 5,
+      "Intitule": "Alerte 5",
+      "niveau_dalerte": "critique",
+      "creer_par": "HASSMAR",
+      "destinataire": "Port Autonome",
+      "date": "2021-11-13"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "nom": "Police National",
+      "sous_service": "PN",
+      "dirige": "Cheikh Fall"
+    },
+    {
+      "id": 2,
+      "nom": "Ministre de l'Intérieur",
+      "sous_service": "MI",
+      "dirige": "Abdu Ndiaye"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

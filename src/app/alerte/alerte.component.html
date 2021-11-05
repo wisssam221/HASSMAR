@@ -1,0 +1,189 @@
+<body>
+    <div id="mySidenav" class="sidenav">
+        <p class="logo"><span>H</span>ASSMAR</p>
+        <a routerLink="/alerte"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
+        <a routerLink="/alerte"><i class="fa fa-bell"></i> &nbsp;&nbsp;Alert</a>
+        <a routerLink="/service"><i class="fa fa-bell"></i> &nbsp;&nbsp;Service</a>
+        <a routerLink="/operation"><i class="fa fa-bell"></i> &nbsp;&nbsp;Operation</a>
+
+    </div>
+    <div id="main">
+
+        <div class="head">
+            <div class="col-div-6">
+                <span style="font-size:30px;font-weight:bolder;cursor:pointer; color: black;" class="nav">&#9776;
+                    Dashboard</span>
+                <span style="font-size:30px;font-weight:bolder;cursor:pointer; color: black;" class="nav2">&#9776;
+                    Dashboard</span>
+            </div>
+
+            <div class="col-div-6">
+                <div class="profile">
+
+                    <button routerLink="/login" class="btn btn-danger mx-2">Logout</button>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="clearfix"></div>
+        <br />
+
+        <div class="col-div-3">
+            <div class="box">
+                <p>67<br /><span>MARINE NATIONAL</span></p>
+
+            </div>
+        </div>
+        <div class="col-div-3">
+            <div class="box">
+                <p>88<br /><span>POLICE NATIONAL</span></p>
+
+            </div>
+        </div>
+        <div class="col-div-3">
+            <div class="box">
+                <p>99<br /><span>DIRECTION DES DOUANES</span></p>
+
+            </div>
+        </div>
+        <div class="col-div-3">
+            <div class="box">
+                <p>78<br /><span>MINISTRE DE L'INTERIEUR</span></p>
+
+            </div>
+        </div>
+        <div class="col-div-3">
+            <div class="box">
+                <p>78<br /><span>PORT AUTONOME</span></p>
+
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br /><br />
+        <div class="col-div-8">
+            <div class="box-8">
+                <div class="content-box">
+                    <p><span><button type="button" (click)="clickAddAlerte()" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" class="btn btn-success"> Add alerte</button></span></p>
+                    <br />
+                    <table class="table table-active">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Intitule</th>
+                                <th>Niveau Alerte</th>
+                                <th>Date</th>
+                                <th>Auteur</th>
+                                <th>Destinataire</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let row of alerteData">
+                                <td>{{row.id}}</td>
+                                <td>{{row.Intitule}}</td>
+                                <td>{{row.niveau_dalerte}}</td>
+                                <td>{{row.date}}</td>
+                                <td>{{row.creer_par}}</td>
+                                <td>{{row.destinataire}}</td>
+                                <td>
+                                    <button class="btn btn-success btn-xs mx-2"><i class="fa fa-eye-slash"></i></button>
+                                    <button (click)="onEdit(row)" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" class="btn btn-primary btn-xs"><i
+                                            class="fa fa-pencil"></i></button>
+                                    <button (click)="deleteAlertes(row)" class="btn btn-danger btn-xs mx-2"><i
+                                            class="fa fa-trash-o "></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-div-4">
+            <div class="box-4">
+                <div class="content-box">
+                    <p>Total Alert</p>
+
+                    <div class="circle-wrap">
+                        <div class="circle">
+                            <div class="mask full">
+                                <div class="fill"></div>
+                            </div>
+                            <div class="mask half">
+                                <div class="fill"></div>
+                            </div>
+                            <div class="inside-circle"> 70% </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header btn btn-dark">
+                    <h5 class="modal-title" id="exampleModalLabel">Form Alerte</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="formValue">
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Intitule</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1"
+                                formControlName="Intitule">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Niveau Alerte</label>
+                            <select class="form-control" id="exampleFormControlInput1" formControlName="niveau_dalerte">
+                                <option value="urgent">Urgent</option>
+                                <option value="critique">Critique</option>
+                                <option value="mineur">Mineur</option>
+                                <option value="majeure">Majeure</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Date</label>
+                            <input type="date" class="form-control" id="exampleFormControlInput1"
+                                formControlName="date">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Auteur</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1"
+                                formControlName="creer_par">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Destinataire</label>
+                            <select class="form-control" id="exampleFormControlInput1" formControlName="destinataire">
+                                <option value="Police Nationale">Police Nationale</option>
+                                <option value="Ministère de l'intérieur">Ministère de l'intérieur</option>
+                                <option value="Direction des Douanes">Direction des Douanes</option>
+                                <option value="Marine Natonal">Marine Natonal</option>
+                                <option value="Port Autonome">Port Autonome</option>
+                            </select>
+                        </div>
+                        
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" *ngIf="showAdd" (click)="postAlerteDetail()"
+                        class="btn btn-primary">Add</button>
+                    <button type="button" *ngIf="showUpdate" (click)="updateAlerteDetail()"
+                        class="btn btn-primary">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+</body>

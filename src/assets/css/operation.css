@@ -1,0 +1,43 @@
+.en-tete{
+    height: 150px;
+    border: 2px solid;
+    margin:12px;
+    display: block;
+}
+.body1{
+    height: 1020px;
+    border: 1px solid;
+    margin:12px;
+    width:65%;
+}
+.body2{
+    width: 40%;
+    border: 1px solid;
+    height:200px;
+    margin-left: 900px;
+}
+.body3{
+    height: 10px;
+    border:1px solid;
+    background-color: black;
+}
+.newalert{
+    padding-left: 30px;
+    margin-top: 12px;
+}
+.dated{
+   padding-bottom: 53px;
+  line-height: 12px;
+  text-align: center;
+}
+hr.vertical {
+    border: 0;
+    margin-left: 100px;
+    border-left: 5px solid blue;
+    height: 700px;
+    float: left;
+  }
+img{
+    border: blue;
+    margin: 32px;
+}
